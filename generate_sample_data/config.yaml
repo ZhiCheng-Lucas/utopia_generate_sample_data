@@ -1,0 +1,54 @@
+# Camera Detection Data Generator Configuration
+# ============================================
+
+# General Settings
+# ----------------
+
+# Random seed for reproducibility - using the same seed will generate identical data
+seed: 42
+
+# Directory where all output files will be created
+output_dir: "output"
+
+# Dataset Size Parameters
+# ----------------------
+
+# Number of top items to include in the ranking outputs
+# Higher values provide more complete rankings but increase file size
+top_x_items: 10
+
+# Number of geographical locations to use in Dataset A
+# These locations will have cameras and detection events
+num_locations: 50
+
+# Total number of rows in Dataset B (geographical locations reference table)
+# Note: Only the first num_locations will be used in Dataset A
+num_dataset_b_rows: 10000
+
+# Number of unique detectable items in the dataset
+# These represent objects that can be detected by cameras (car, person, etc.)
+num_items: 100
+
+# Number of detection events to generate in Dataset A
+# This is the main parameter controlling dataset size
+num_detection_events: 1000000
+
+# Data Quality Parameters
+# ----------------------
+
+# Locations where duplication affects ranking (changes which item is #1)
+# For these locations, the second most common item will be duplicated enough
+# to make it rank first when duplicates are counted
+rank_changing_locations: [10, 20]
+
+# Location with skewed data distribution
+# This location will have more detection events than others
+data_skew_location: 42
+
+# Factor by which the skewed location has more detections
+# A factor of 5 means the skewed location has 5x more events than average
+data_skew_factor: 5
+
+# Reference date for timestamp generation
+# This ensures consistent timestamps regardless of when the script is run
+reference_date: "2025-01-1"
