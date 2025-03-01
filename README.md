@@ -1,6 +1,19 @@
 # Camera Detection Data Generation Project
-## Overview
-This project generates synthetic datasets for testing a Spark RDD-based application that identifies the top items detected by video cameras across different geographical locations. The data simulates camera detection events with realistic distributions and includes deliberately introduced data quality issues (duplications) to test the application's robustness.
+This project generates synthetic datasets for testing a Spark RDD-based application that identifies the top items detected by video cameras across different geographical locations. 
+
+The data simulates camera detection events with realistic distributions and includes deliberately introduced data quality issues (duplications) to test the application's robustness.
+
+A sample dataset along with generation logs is available in the [./generate_sample_data/output](./generate_sample_data/output) directory. This can be used as a reference or for quick testing.
+
+## Development Notes
+This project was developed as part of an assignment with time constraints. As a result, some best practices were omitted:
+
+- No automated CI/CD pipeline
+- No containerization (Docker)
+- Limited automated testing (manual verification via comparison.py was performed)
+
+These limitations could be addressed in future iterations to improve the project's robustness and maintainability.
+
 
 ## Objective
 The primary objective is to generate realistic test data that:
